@@ -4,3 +4,27 @@ body {
   font-weight: $body-font-weight;
   background-color: $body-background-color;
 }
+
+form input[type=text],
+form input[type=password]{
+  border-left: 0;
+  border-right: 0;
+  border-top: 0;
+  box-shadow: none;
+  border-bottom: 1px solid $input-border-focus;
+}
+
+.form-group {
+  box-shadow: none;
+}
+
+.form-control {
+  box-shadow: none;
+  height: 30px;
+  line-height: 21px;
+  padding: 0;
+}
+
+.form-control:focus {
+  box-shadow: none;
+}

@@ -19,12 +19,13 @@ class Layout extends Marionette.LayoutView
 
     $('.js-my-edit-modal').modal()
 
-  modelEvents:
-    change: 'render'
+#  modelEvents:
+#    change: 'render'
 
   ui:
     'input': 'input'
     'save': '.main__save-button'
+    'cancel': '.main__cancel-button'
     '_csrf_token': '[name="_csrf_token"]'
 
     siteUrl: '[name="siteUrl"]'
@@ -52,12 +53,15 @@ class Layout extends Marionette.LayoutView
     'click @ui.save': 'processForm'
     'keyup @ui.input': 'validationState'
     'blur @ui.input':  'validationState'
+    'click @ui.cancel': 'closeModal'
 
 #    'change [data-validation]': @validateField
 #    'blur [data-validation]':   @validateField
 
+  closeModal: (event) ->
+    event.preventDefault()
+    $('.js-my-edit-modal').modal 'hide'
 
-  showLabel: (event) ->
   processForm: (event) ->
     event.preventDefault()
     console.log 'save user'
@@ -71,7 +75,7 @@ class Layout extends Marionette.LayoutView
         password: @ui.password.val()
         userEmail: @ui.userEmail.val()
         userGender: @ui.userGender.val()
-        userBirthday: @ui.userBirthday.val()
+        userBirthday: @birthdayCompound @ui.userBirthday.val()
 
     console.log @options.postUserUrl
 
@@ -80,6 +84,7 @@ class Layout extends Marionette.LayoutView
       method: 'POST'
       url: @options.postUserUrl
       success: ->
+        $('.js-my-edit-modal').modal 'hide'
         App.userShow()
       error: @errorsHandler
     )
@@ -94,7 +99,6 @@ class Layout extends Marionette.LayoutView
 
   validationState: (e) =>
     validation = $(e.target).attr('name')
-    #value = $(e.target).val()
     @valid validation
 
   labelState: (e) =>
@@ -112,5 +116,14 @@ class Layout extends Marionette.LayoutView
     .parent('.form-group')
     .removeClass('valid')
     .addClass('invalid')
+
+  birthdayCompound: (bd) ->
+    bd = moment(bd);
+
+    return {
+      year: bd.year(),
+      month: bd.month() + 1,
+      day: bd.date()
+    }
 
 module.exports = Layout

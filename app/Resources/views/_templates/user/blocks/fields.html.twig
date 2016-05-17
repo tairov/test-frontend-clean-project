@@ -62,7 +62,7 @@
         fieldName: 'userGender'
     } %}
     <div class="form-group col-sm-3 col-xs-8 active user-edit__userGender">
-        <label></label>
+        <label>&nbsp;</label>
         <div class="checkbox checkbox-primary checkbox-circle">
             <input name="{{ props.fieldName }}"
                    id="user_{{ props.fieldName }}_male"
@@ -89,7 +89,7 @@
 {% block _user_userAbout_row %}
     {% set props = {
         fieldName: 'userAbout',
-        label: '',
+        label: 'About',
         class: 'col-lg-7 col-md-7 col-sm-7 col-xs-7 user-edit__userAbout'
     } %}
     {{ _self.showField(props) }}
@@ -98,14 +98,14 @@
 {% block _user_password_row %}
     <div class="form-group col-sm-2 col-xs-8 user-edit__password">
         <label for="user_password">Password</label>
-        <input name="password][first" type="password"
+        <input name="user[password][first]" type="password"
                class="form-control"
                id="user_password" placeholder="Password">
     </div>
 
     <div class="form-group col-sm-2 col-xs-8 user-edit__password_second">
-        <label for="user_password">Password</label>
-        <input name="password][second" type="password"
+        <label for="user_password">Repeat Password</label>
+        <input name="user[password][second]" type="password"
                class="form-control"
                id="user_password_second" placeholder="Repeat Password">
     </div>

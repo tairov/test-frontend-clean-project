@@ -1,13 +1,40 @@
 .user-edit {
-  &__userGender input[type=radio] {
-    margin-left: 40px;
-  }
   label {
     visibility: hidden;
+    color: $input-border-focus;
   }
 
   .form-group.active label {
     visibility: visible;
+  }
+
+  &__userGender.form-group.active label {
+    color: $input-color-placeholder;
+  }
+
+  .form-group.invalid {
+
+    label {
+      visibility: visible;
+      color: $input-border-invalid;
+    }
+
+    input[type=text],
+    input[type=password] {
+      border-bottom-color: $input-border-invalid;
+    }
+  }
+
+  &__userGender input[type=radio] {
+    margin-left: 20px;
+  }
+
+  &__userGender input[type=radio]:first-child {
+    margin-left: 10px;
+  }
+
+  &__userSkill {
+    width: 90px;
   }
 }
 
@@ -22,8 +49,4 @@
       }
     }
   }
-}
-
-.invalid label {
-  color: #ff0000;
 }

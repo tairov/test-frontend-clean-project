@@ -24,7 +24,7 @@ class DefaultController extends Controller
 
         return $this->render('default/index.html.twig', array(
             'form' => $handler->getBuiltFormView(),
-            'user' => $this->user,
+            //'user' => $this->user,
             'user_data' => $userData,
         ));
     }
