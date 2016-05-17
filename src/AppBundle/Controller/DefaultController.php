@@ -41,7 +41,13 @@ class DefaultController extends Controller
         $this->initUser();
         $handler = $this->get('frontend.form_handlers.user')->setModel($this->user);
 
-        return $handler->handle();
+        $response = $handler->handle();
+
+        if ($response->getStatusCode() == 200) {
+            $response->setContent($this->get('jms_serializer')->serialize($this->user, 'json'));
+        };
+
+        return $response;
     }
 
     /**

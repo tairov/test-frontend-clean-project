@@ -19,8 +19,8 @@ class Layout extends Marionette.LayoutView
 
     $('.js-my-edit-modal').modal()
 
-#  modelEvents:
-#    change: 'render'
+  modelEvents:
+    change: 'render'
 
   ui:
     'input': 'input'
