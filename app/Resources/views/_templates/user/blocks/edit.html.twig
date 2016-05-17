@@ -1,0 +1,30 @@
+{% form_theme form '_templates/user/blocks/fields.html.twig' %}
+
+{{ form_start(form) }}
+<div class="row">
+    {{ form_row(form.userName) }}
+    {{ form_row(form.userBirthday) }}
+</div>
+
+<div class="row">
+    {{ form_row(form.userEmail) }}
+    {{ form_row(form.siteUrl) }}
+</div>
+
+<div class="row">
+    {{ form_row(form.userPhone) }}
+    {{ form_row(form.userSkill) }}
+    {{ form_row(form.userGender) }}
+</div>
+
+<div class="row">
+    {{ form_row(form.password) }}
+</div>
+
+<div class="row">
+    {{ form_row(form.userAbout) }}
+</div>
+
+{#{{ form_rest(form) }}#}
+
+{{ form_end(form) }}

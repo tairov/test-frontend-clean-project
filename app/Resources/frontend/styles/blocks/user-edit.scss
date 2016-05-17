@@ -1,0 +1,29 @@
+.user-edit {
+  &__userGender input[type=radio] {
+    margin-left: 40px;
+  }
+  label {
+    visibility: hidden;
+  }
+
+  .form-group.active label {
+    visibility: visible;
+  }
+}
+
+.form-horizontal {
+  @media screen and (min-width: $screen-sm) {
+    .user-edit {
+      &__userBirthday,
+      &__siteUrl,
+      &__userSkill,
+      &__password_second {
+        margin-left: 40px;
+      }
+    }
+  }
+}
+
+.invalid label {
+  color: #ff0000;
+}

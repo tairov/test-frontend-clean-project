@@ -1,0 +1,112 @@
+{% macro showField(props) %}
+    <div class="form-group {{ props.gridClass|default('col-sm-3 col-xs-8') }} {{ props.class|default('') }}">
+        <label for="user_{{ props.fieldName }}">{{ props.label|default('') }}</label>
+        <input name="{{ props.fieldName }}"  value="<%- {{ props.fieldName }} %>"
+               type="{{ props.type|default('text') }}"
+               class="form-control {{ props.inputClass|default('') }}"
+               id="user_{{ props.fieldName }}" placeholder="{{ props.label|default("") }}">
+    </div>
+{% endmacro %}
+
+{% block _user_userName_row %}
+    {% set props = {fieldName: 'userName', label: 'User Name'} %}
+    {{ _self.showField(props) }}
+{% endblock %}
+
+{% block _user_userBirthday_row %}
+    {% set props = {
+        fieldName: 'userBirthday',
+        label: 'Birthday'
+    } %}
+    <div class="form-group  col-sm-2 col-xs-8 user-edit__userBirthday">
+        <label for="user_{{ props.fieldName }}">{{ props.label|default('') }}</label>
+        <input name="{{ props.fieldName }}"  value="<%= birthDate({{ props.fieldName }}) %>"
+               type="{{ props.type|default('text') }}"
+               class="form-control {{ props.inputClass|default('') }}"
+               id="user_{{ props.fieldName }}" placeholder="{{ props.label|default("") }}">
+    </div>
+{% endblock %}
+
+{% block _user_Phone_row %}
+    {% set props = {fieldName: 'userPhone', label: 'Phone'} %}
+    {{ _self.showField(props) }}
+{% endblock %}
+
+{% block _user_userEmail_row %}
+    {% set props = {fieldName: 'userEmail', label: 'Email'} %}
+    {{ _self.showField(props) }}
+{% endblock %}
+
+{% block _user_siteUrl_row %}
+    {% set props = {fieldName: 'siteUrl', label: 'URL', class: 'user-edit__siteUrl'} %}
+    {{ _self.showField(props) }}
+{% endblock %}
+
+{% block _user_userSkill_row %}
+    {% set props = {
+        fieldName: 'userSkill',
+        label: 'Skill number',
+        class: 'user-edit__userSkill',
+        gridClass: 'col-sm-1 col-xs-5'
+    } %}
+    {{ _self.showField(props) }}
+{% endblock %}
+
+{% block _user_userPhone_row %}
+    {% set props = {fieldName: 'userPhone', label: 'Phone number'} %}
+    {{ _self.showField(props) }}
+{% endblock %}
+
+{% block _user_userGender_row %}
+    {% set props = {
+        fieldName: 'userGender'
+    } %}
+    <div class="form-group col-sm-3 col-xs-8 active user-edit__userGender">
+        <label></label>
+        <div class="checkbox checkbox-primary checkbox-circle">
+            <input name="{{ props.fieldName }}"
+                   id="user_{{ props.fieldName }}_male"
+                   class="styled"
+                   type="radio"
+                    <%= checkGender({{ props.fieldName }}, 'male') %>
+            value="male">
+            <label for="user_{{ props.fieldName }}_male">
+                Male
+            </label>
+            <input
+                    name="{{ props.fieldName }}"
+                    id="user_{{ props.fieldName }}_female"
+                    class="styled" type="radio"
+                        <%= checkGender({{ props.fieldName }}, 'female') %>
+                    value="female">
+            <label for="user_{{ props.fieldName }}_female">
+                Female
+            </label>
+        </div>
+    </div>
+{% endblock %}
+
+{% block _user_userAbout_row %}
+    {% set props = {
+        fieldName: 'userAbout',
+        label: '',
+        class: 'col-lg-7 col-md-7 col-sm-7 col-xs-7 user-edit__userAbout'
+    } %}
+    {{ _self.showField(props) }}
+{% endblock %}
+
+{% block _user_password_row %}
+    <div class="form-group col-sm-2 col-xs-8 user-edit__password">
+        <label for="user_password">Password</label>
+        <input name="password][first" type="password"
+               class="form-control"
+               id="user_password" placeholder="Password">
+    </div>
+
+    <div class="form-group col-sm-2 col-xs-8 user-edit__password_second">
+        <label for="user_password">Password</label>
+        <input name="password][second" type="password"
+               class="form-control"
+               id="user_password_second" placeholder="Repeat Password">
+    </div>
+{% endblock %}

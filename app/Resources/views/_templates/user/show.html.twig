@@ -1,0 +1,16 @@
+<script type="text/template" id="user-show">
+    <header class="row main__header">
+        <div class="col-lg-8 col-md-8 col-sm-7 col-xs-7">
+            <h1>Application form</h1>
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-3 col-xs-7">
+            <ul class="nav nav-pills main__toolbar">
+                <li><a href="#edit" class="main__edit-button">Edit</a></li>
+            </ul>
+        </div>
+    </header>
+    <section class="row main__user-info">
+        {% include '_templates/user/blocks/info.html.twig' %}
+        {% include '_templates/user/blocks/details.html.twig' %}
+    </section>
+</script>

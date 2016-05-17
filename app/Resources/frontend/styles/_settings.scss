@@ -1,0 +1,54 @@
+// bootstrap settings
+$icon-font-path: "~bootstrap-sass/assets/fonts/bootstrap/";
+$fa-font-path: "~font-awesome/fonts/";
+
+$grid-columns: 10;
+$grid-gutter-width: 0;
+
+$input-color: #434343;
+$input-border: #e1e1e1;
+
+$input-border-radius: 0;
+$input-border-radius-large: 0;
+$input-border-radius-small: 0;
+
+$input-border-focus:             #26abec;
+$input-color-placeholder:        #bdbdbd;
+
+$input-height-base:              25px;
+$input-height-small:             25px;
+
+// $form-group-margin-bottom:       15px
+
+
+// Заголовки catamaran
+// h1. Application form Catamaran thin100 36 px
+// h2. Application form catamaran thin100 28 px
+// форма work-sans
+// User Name -> worksans light 300 12 px
+// John Doe -> worksans light 300 14px
+
+/// primary font Work Sans Normal 400 14px;
+$font-size-h1: 36px;
+$font-size-h2: 28px;
+$font-size-h4: 18px;
+
+$headings-font-family:    'Catamaran', Arial, sans-serif;
+$headings-font-weight:    100;
+
+$font-family-base: 'Work Sans', Arial, sans-serif;
+
+// app settings
+$body-background-color: #fafafb;
+$body-font-weight: 400;
+$show-page-margins: 50px;
+$header-border-color: #e1e1e1;
+
+// $user-info-border-color: #eaeaeb;
+
+
+$block-shadow-color-1: #f1f1f2;
+$block-shadow-color-2: #f6f6f7;
+$block-shadow-color-3: #f9f9fa;
+
+$short-info-font-family: 'Catamaran', Arial, sans-serif;

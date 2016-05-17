@@ -1,0 +1,33 @@
+
+.main {
+  &__header {
+    min-height: 185px;
+    padding-top: 73px;
+    margin-left: $show-page-margins;
+    margin-right: $show-page-margins;
+    padding-left: 0;
+    padding-right: 0;
+    border-bottom: 1px solid $header-border-color;
+  }
+
+  &__user-info {
+    margin-left: $show-page-margins;
+    margin-right: $show-page-margins;
+    margin-top: 41px;
+  }
+
+  &__edit-title {
+    margin-left: 45%;
+  }
+
+  @media screen and (min-width: 350px) {
+    &__edit-modal {
+      width: 100%;
+    }
+  }
+
+  .form-control input {
+    border: 5px solid $input-border;
+    box-shadow: none;
+  }
+}

@@ -1,0 +1,27 @@
+<script type="text/template" id="user-edit">
+    <div class="modal fade js-my-edit-modal" tabindex="-1" role="dialog" aria-labelledby="gridSystemModalLabel">
+        <div class="modal-dialog main__edit-modal" role="document">
+            <div class="modal-content">
+                <header class="row main__header">
+                    <div class="col-lg-8 col-md-8 col-sm-7 col-xs-7">
+                        <h3 class="main__edit-title">Edit</h3>
+                    </div>
+                    <div class="col-lg-2 col-md-2 col-sm-3 col-xs-7">
+                        <ul class="nav nav-pills main__toolbar">
+                            <li><a href="#cancel" class="main__cancel-button">Cancel</a></li>
+                            <li><a href="#save" class="main__save-button">Save</a></li>
+                        </ul>
+                    </div>
+                </header>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-xs-6 col-xs-offset-2 user-edit">
+                            <h3>Application form</h3>
+{% include '_templates/user/blocks/edit.html.twig' %}
+                        </div>
+                    </div>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+</script>
